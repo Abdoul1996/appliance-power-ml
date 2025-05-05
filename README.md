@@ -1,6 +1,4 @@
 # my-statistics-project
-
-
 ---
 
 ## 📊 Dataset
