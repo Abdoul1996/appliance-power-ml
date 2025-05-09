@@ -1,62 +1,58 @@
-# my-statistics-project
----
 
-## 📊 Dataset
+# 🧠 Appliance Energy Consumption Prediction
 
-- **Source**: UCI Machine Learning Repository  
-- **Name**: Appliances Energy Prediction Dataset  
-- **Size**: 19,735 observations, 29 features (temperature, humidity, time, weather)
+A machine learning project for analyzing and predicting household appliance energy consumption using multiple regression models and tree-based algorithms. Additionally I also forcaste the next month of energy consumption.
 
 ---
 
-## 🧪 Methods & Workflow
+## 📂 Dataset Overview
 
-1. **EDA**:
-   - Distributions
-   - Correlations
-   - Outlier detection
-
-2. **Preprocessing**:
-   - Date parsing and feature extraction (hour, day, month)
-   - Categorical encoding (`get_dummies`)
-   - Outlier capping using IQR
-   - Face-of-day labeling (morning, afternoon, evening, night)
-
-3. **Feature Selection**:
-   - Variance Threshold
-   - F-value Selection (ANOVA)
-
-4. **Modeling**:
-   - Standardization
-   - Multiple Linear Regression using `statsmodels.OLS`
-   - Evaluation on test set
+- **Source**: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Appliances+energy+prediction)  
+- **Dataset**: Appliances Energy Prediction  
+- **Size**: 19,735 observations × 29 features  
+- **Features**: Includes temperature, humidity, date/time, weather conditions, etc.
 
 ---
 
-## 📈 Evaluation Metrics
+## 🔍 Workflow
 
-| Metric | Value (Example) |
-|--------|-----------------|
-| RMSE   | ~92.75          |
-| MAE    | ~54.45          |
-| R²     | 0.14            |
-| MAPE   | 66.96%          |
+### 1. **Exploratory Data Analysis (EDA)**
+- Visualized distributions and feature correlations
+- Detected and handled outliers
+- Analyzed time-based consumption trends
+
+### 2. **Preprocessing**
+- Extracted date/time features (hour, day, month)
+- Performed categorical encoding using `get_dummies`
+- Applied IQR capping to treat outliers
+- Labeled time-of-day categories (morning, afternoon, evening, night)
+
+### 3. **Feature Selection**
+- Removed low-variance features
+- Selected features using ANOVA F-values
+
+### 4. **Modeling & Evaluation**
+- Applied standardization
+- Trained and evaluated the following models:
+  - Linear Regression
+  - Ridge Regression
+  - Lasso Regression
+  - Decision Tree
+  - Grid Search-optimized Decision Tree
+  - Random Forest Regressor
 
 ---
 
-## 🚀 Getting Started
+## 📊 Model Comparison
 
-```bash
-# Clone the repository
-git clone https://github.com/Abdoul1996/appliance-power-ml.git
-cd appliance-power-ml
+| Model             | RMSE   | MAE   | R²   | MAPE (%) |
+|------------------|--------|-------|------|----------|
+| Linear Regression | 92.75  | 54.45 | 0.14 | 66.96    |
+| Ridge Regression  | 92.75  | 54.45 | 0.14 | 66.95    |
+| Lasso Regression  | 92.74  | 54.44 | 0.14 | 66.95    |
+| Decision Tree     | 90.72  | 50.00 | 0.18 | 58.58    |
+| Grid Search Tree  | 85.04  | 37.94 | 0.28 | 35.65    |
+| **Random Forest** | **63.10**  | **29.55** | **0.60** | **29.54** |
 
-# Create a virtual environment
-conda create -n env-statistic python=3.9
-conda activate env-statistic
+✅ **Best Model**: `Random Forest` — achieved the highest R² score and lowest error metrics.
 
-# Install requirements (to be generated separately)
-pip install -r requirements.txt
-
-# Open and run the notebooks in order
-jupyter notebook
