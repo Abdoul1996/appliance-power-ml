@@ -1,7 +1,6 @@
-
 # 🧠 Appliance Energy Consumption Prediction
 
-A machine learning project for analyzing and predicting household appliance energy consumption using multiple regression models and tree-based algorithms. Additionally I also forcaste the next month of energy consumption.
+A machine learning project for analyzing and predicting household appliance energy consumption using multiple regression models and tree-based algorithms.
 
 ---
 
@@ -55,4 +54,18 @@ A machine learning project for analyzing and predicting household appliance ener
 | **Random Forest** | **63.10**  | **29.55** | **0.60** | **29.54** |
 
 ✅ **Best Model**: `Random Forest` — achieved the highest R² score and lowest error metrics.
+---
 
+## 🔮 Forecasting
+
+In addition to traditional regression modeling, the project includes time series forecasting to predict future appliance energy usage. Steps include:
+
+- Resampling and aggregating timestamped data
+- Visualizing seasonal and daily patterns
+- Implementing forecasting models such as:
+  - Moving Average
+  - Exponential Smoothing
+  - ARIMA (AutoRegressive Integrated Moving Average)
+- Evaluating forecasts with time-based cross-validation and performance metrics (e.g., MAE, RMSE)
+
+These forecasting models help anticipate future consumption trends and support energy optimization decisions.
